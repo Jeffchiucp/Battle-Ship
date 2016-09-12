@@ -55,7 +55,7 @@ class Player:
         self.fleet = []  # the fleet is a list of ship objects
         self.life = len(self.ship_info)
 
-        name = input("Player {}, what is you name:".format(player_num))
+        name = input("Player {}, what is your name:".format(player_num))
         self.name = name.title()
 
     def ship_placement(self):
@@ -70,10 +70,10 @@ class Player:
                 direction = input("The location of the {} ({} spaces): {} Is it Horizontal? (Y)/N: ".format(s_name,
                                                                                                             length,
                                                                                                             loc))
-                if direction.lower() == 'y':
-                    direction = 'horizontal'
-                else:
+                if direction.lower() == 'n' or direction.lower() == 'no':
                     direction = 'vertical'
+                else:
+                    direction = 'horizontal'
                 new_ship = Ship(loc, direction, length, s_name)
                 if self.ship_verify(new_ship):
                     break
