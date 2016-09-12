@@ -161,8 +161,8 @@ class Player:
         takes all information from player to display the location of hits, misses and ships.
         when hide ships is True all ship markers '-' and '|' will be replaced with 'O'
         """
-        board = [[EMPTY] * 10, [EMPTY] * 10, [EMPTY] * 10, [EMPTY] * 10, [EMPTY] * 10,
-                 [EMPTY] * 10, [EMPTY] * 10, [EMPTY] * 10, [EMPTY] * 10, [EMPTY] * 10]
+
+        board = [[EMPTY for cell in range(0, 10)] for row in range(0, 10)]  # make an empty board
 
         for alpha, num in self.missed:  # Populate board with all missed positions
 
